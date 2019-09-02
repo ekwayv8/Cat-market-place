@@ -16,7 +16,7 @@ class Item < ApplicationRecord
 	#Image_url validation: it is mendatory to have an image_url for an item
 	validates :image_url, presence: true
 
-	#Link to join table that we need to create (cart_items and item_orders)		
+	#Link to join table that we need to create (cart_items and item_orders) and also a link to the user table
 	belongs_to :user
 	has_many :cart_items
 	has_many :carts, through: :cart_items   
