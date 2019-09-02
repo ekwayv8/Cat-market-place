@@ -17,6 +17,7 @@ class Item < ApplicationRecord
 	validates :image_url, presence: true
 
 	#Link to join table that we need to create (cart_items and item_orders)		
+	belongs_to :user
 	has_many :cart_items
 	has_many :carts, through: :cart_items   
 
