@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:title])
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
       if @item.save
-        redirect_to @item
+        redirect_to item_path
       else
         render 'new'
       end
