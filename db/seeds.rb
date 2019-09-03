@@ -30,8 +30,8 @@ Item.reset_pk_sequence
 #	user = User.create!(email: email,password: 'mobinawa', encrypted_password: Faker::Internet.password)
 #end
 
-5.times do
-	item = Item.create!(title: Faker::Book.title,description:Faker::Hipster.paragraph,price: Faker::Number.decimal(l_digits: 2), image_url: "https://unsplash.com/photos/7GX5aICb5i4")
+20.times do
+	item = Item.create!(title: Faker::Artist.name,description:Faker::Hipster.paragraph,price: Faker::Number.decimal(l_digits: 2), image_url: "https://unsplash.com/photos/7GX5aICb5i4")
 end
 
 #10.times do
