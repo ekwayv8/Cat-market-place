@@ -11,8 +11,7 @@ require 'activerecord-reset-pk-sequence'
 User.destroy_all
 Item.destroy_all
 Order.destroy_all
-#Cart.destroy_all
-#Order.destroy_all
+Cart.destroy_all
 #Cart_item.destroy_all
 #Item_order.destroy_all
 
@@ -20,6 +19,7 @@ Order.destroy_all
 User.reset_pk_sequence
 Item.reset_pk_sequence
 Order.reset_pk_sequence
+Cart.reset_pk_sequence
 #Cart_item.reset_pk_sequence
 #Item_order.reset_pk_sequence
 
@@ -37,3 +37,9 @@ end
 10.times do
 	order = Order.create
 end
+
+#We have one problem : We don't have one cart for an unique user! let try to find how to correct that
+5.times do
+   cart = Cart.create(user_id: User.all.ids.sample)
+end
+
