@@ -9,7 +9,7 @@ class Item < ApplicationRecord
     presence: true
 
     #Price validation: it is mendatory to have a price for an item and also that price need to be decimal
-    validates :price,presence: true
+    validates :price, numericality: { greater_than_or_equal_to: 0 }
 	
 	#Image_url validation: it is mendatory to have an image_url for an item
 	validates :image_url, presence: true
