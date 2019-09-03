@@ -8,27 +8,27 @@
 require 'faker'
 require 'activerecord-reset-pk-sequence'
 
-User.destroy_all
+#User.destroy_all
 Item.destroy_all
-Order.destroy_all
-Cart.destroy_all
-CartItem.destroy_all
-ItemOrder.destroy_all
+#Order.destroy_all
+#Cart.destroy_all
+#CartItem.destroy_all
+#ItemOrder.destroy_all
 
 #Allow us to reset id for every objet that we destroy! So when we run db:seed again we restart with id 1 (not with id 234 for example)
-User.reset_pk_sequence
+#User.reset_pk_sequence
 Item.reset_pk_sequence
-Order.reset_pk_sequence
-Cart.reset_pk_sequence
-CartItem.reset_pk_sequence
-ItemOrder.reset_pk_sequence
+#Order.reset_pk_sequence
+#Cart.reset_pk_sequence
+#CartItem.reset_pk_sequence
+#ItemOrder.reset_pk_sequence
 
-5.times do
-	first_name = Faker::Name.first_name 
-	last_name = Faker::Name.last_name
-	email = "#{first_name}.#{last_name}@yopmail.com"
-	user = User.create!(email: email,password: 'mobinawa', encrypted_password: Faker::Internet.password)
-end
+#5.times do
+#	first_name = Faker::Name.first_name 
+#	last_name = Faker::Name.last_name
+#	email = "#{first_name}.#{last_name}@yopmail.com"
+#	user = User.create!(email: email,password: 'mobinawa', encrypted_password: Faker::Internet.password)
+#end
 
 5.times do
 	item = Item.create!(title: Faker::Book.title,description:Faker::Hipster.paragraph,price: Faker::Number.decimal(l_digits: 2), image_url: "https://unsplash.com/photos/7GX5aICb5i4")
