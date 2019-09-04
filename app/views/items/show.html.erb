@@ -1,2 +1,24 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="col-lg-9">
+
+        <div class="card mt-4">
+          <img class="card-img-top img-fluid" src="<%=(url_for(@item.image_url)) %>" alt="">
+          <div class="card-body">
+            
+            <h2 class="card-title">
+            	<h3><%= @item.title %></h3>
+            	
+            </h2>
+            
+            <h4><%= @item.price%></h4>
+            <p class="card-text"><%= @item.description %></p>
+            
+            <!--add "add to cart" button-->
+
+          </div>
+        </div>
+        <!-- /.card -->
+
+        
+
+      </div>
+      <!-- /.col-lg-9 -->
