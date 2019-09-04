@@ -22,8 +22,20 @@
 *= require animate/animate.min
 *= require fancybox/css/jquery.fancybox.min
 
+ # Icons
+*= require fonts/font-awesome/css/font-awesome.min
+*= require fonts/ionicons/css/ionicons.min
+*= require fonts/line-icons/line-icons
+*= require fonts/line-icons-pro/line-icons-pro
+
+ # Linea Icons
+*= require fonts/linea/arrows/linea-icons
+*= require fonts/linea/basic/linea-icons
+*= require fonts/linea/ecommerce/linea-icons
+*= require fonts/linea/software/linea-icons
+
+
  # Boomerang
 *= require boomerang.min
-
 
  */
