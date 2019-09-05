@@ -31,7 +31,7 @@ Item.reset_pk_sequence
 #end
 
 20.times do
-	item = Item.create!(title: Faker::Artist.name,description:Faker::Hipster.paragraph,price: Faker::Number.decimal(l_digits: 2), image_url: "cat-item-image_url.jpg")
+	item = Item.create!(title: Faker::Creature::Cat.name,description:Faker::Hipster.paragraph,price: Faker::Number.decimal(l_digits: 2), image_url: "cat-product/cat-item-image_url.jpg")
 end
 
 #10.times do
