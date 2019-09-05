@@ -78,4 +78,7 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'devise'
 
+gem 'stripe'
+
+
 
