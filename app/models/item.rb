@@ -18,7 +18,10 @@ class Item < ApplicationRecord
 	has_many :cart_items
 	has_many :carts, through: :cart_items   
 
-    has_many :item_orders
+  has_many :item_orders
 	has_many :orders, through: :item_orders
+
+	#Link to ActiveStorage for the image_upload
+	has_one_attached :image_upload
 
 end

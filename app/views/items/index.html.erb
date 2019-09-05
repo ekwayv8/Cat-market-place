@@ -118,7 +118,11 @@
 	                                        <div class="block product bg-transparent no-radius">
 	                                            <div class="product-image">
 	                                                <div class="view view-first">
-	                                                     <%= link_to image_tag(item.image_url), item_path(item.id) %>
+	                                                     <%if item.image_upload.attached?%>
+                                                        <%= image_tag item.image_upload, alt: 'image_upload' %>
+                                                      <%else%>
+                                                        <%= image_tag(item.image_url) %>
+                                                      <%end%>
 	                                                </div>
 
 	                                                <div class="product-actions--a product-actions--2" data-animation-in="slideInRight"  data-animation-out="slideOutRight">
