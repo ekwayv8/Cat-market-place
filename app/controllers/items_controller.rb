@@ -13,9 +13,9 @@ before_action :authenticate_user!, except: [:index, :show]
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = Item.new(title: params[:title], description: params[:description], price: params[:price], image_url: params[:image_url])
       if @item.save
-        redirect_to item_path
+        redirect_to item_path(@item.id)
       else
         render 'new'
       end
@@ -28,12 +28,6 @@ before_action :authenticate_user!, except: [:index, :show]
   def destroy
     @item = Item.destroy
 
-  end
-
-private
-
-  def item_params
-    params.require(:item).permit(:title, :description, :price, :image_url)
   end
 
 end
