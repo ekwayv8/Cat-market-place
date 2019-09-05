@@ -78,4 +78,6 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'devise'
 
+gem 'font-awesome-rails'
+
 
