@@ -4,103 +4,11 @@
 	<title>Cat MP</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-	                    <section class="slice sct-color-1">
-	                        <div class="container">
-	                            <div class="section-title section-title--style-1 text-center mb-3">
-	                                <h3 class="section-title-inner heading-6 strong-600 text-uppercase ls-2">
-	                                    <span>Choose your favourite cat</span>
-	                                </h3>
-	                                <span class="section-title-delimiter clearfix d-none"></span>
-	                            </div>
-
-	                            <span class="clearfix"></span>
-
-	                            <div class="fluid-paragraph fluid-paragraph-sm c-gray-light strong-300 font-custom-4 text-center">
-	                                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore et dolore isque ut nulla.
-	                            </div>
-
-	                            <span class="space-xs-md"></span>
-
-	                            <div class="masonry-container">
-	                                <div class="row row-cols-gutter-xs masonry">
-	                                    <div class="masonry-item col-md-6">
-	                                        <div class="card bg-minimalist">
-	                                            <div class="card-image">
-	                                                <%= image_tag 'cat-category/cat-birman.png' %>
-	                                            </div>
-	                                            <div class="card-body--overlay d-flex align-items-start">
-	                                                <div class="col">
-	                                                    <div class="px-4 py-4">
-	                                                        <h3 class="heading heading-4 strong-500 mb-0">
-	                                                            Birman
-	                                                        </h3>
-	                                                        <%= link_to 'See products', items_path, class: "link link-xs link--style-3 text-capitalize" %> 
-	                                                    </div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="masonry-item col-md-6">
-	                                        <div class="card bg-minimalist">
-	                                            <div class="card-image">
-	                                                <%= image_tag 'cat-category/cat-persian.png' %>
-	                                            </div>
-	                                            <div class="card-body--overlay d-flex align-items-start">
-	                                                <div class="col">
-	                                                    <div class="px-4 py-4">
-	                                                        <h3 class="heading heading-4 strong-500 mb-0">
-	                                                            Persian
-	                                                        </h3>
-	                                                        <%= link_to 'See products', items_path, class: "link link-xs link--style-3 text-capitalize" %> 
-	                                                    </div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="masonry-item col-md-6">
-	                                        <div class="card bg-minimalist">
-	                                            <div class="card-image">
-	                                                <%= image_tag 'cat-category/cat-bengal.png' %>
-	                                            </div>
-	                                            <div class="card-body--overlay d-flex align-items-start">
-	                                                <div class="col">
-	                                                    <div class="px-4 py-4">
-	                                                        <h3 class="heading heading-4 strong-500 mb-0">
-	                                                            Bengal
-	                                                        </h3>
-	                                                        <%= link_to 'See products', items_path, class: "link link-xs link--style-3 text-capitalize" %> 
-	                                                    </div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="masonry-item col-md-6">
-	                                        <div class="card bg-minimalist">
-	                                            <div class="card-image">
-	                                                <%= image_tag 'cat-category/cat-kitty.png' %>
-	                                            </div>
-	                                            <div class="card-body--overlay d-flex align-items-start">
-	                                                <div class="col">
-	                                                    <div class="px-4 py-4">
-	                                                        <h3 class="heading heading-4 strong-500 mb-0">
-	                                                            Kitty
-	                                                        </h3>
-	                                                        <%= link_to 'See products', items_path, class: "link link-xs link--style-3 text-capitalize" %> 
-	                                                    </div>
-	                                                </div>
-	                                            </div>
-	                                        </div>
-	                                    </div>
-	                                </div>
-	                            </div>
-	                        </div>
-	                    </section>
+	                    
 
 	                    <section class="slice border-top">
 	                        <div class="container">
@@ -108,6 +16,9 @@
 	                                <h3 class="section-title-inner heading-6 strong-600 text-uppercase ls-2">
 	                                    <span>List of Cat Pictures</span>
 	                                </h3>
+	                                <div class="fluid-paragraph fluid-paragraph-sm c-gray-light strong-300 font-custom-4 text-center">
+	                                Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt labore et dolore isque ut nulla.
+	                            </div>
 	                                <span class="section-title-delimiter clearfix d-none"></span>
 	                            </div>
 
@@ -118,11 +29,14 @@
 	                                        <div class="block product bg-transparent no-radius">
 	                                            <div class="product-image">
 	                                                <div class="view view-first">
-	                                                     <%if item.image_upload.attached?%>
-                                                        <%= image_tag item.image_upload, alt: 'image_upload' %>
+
+	                                                		<%if item.image_upload.attached?%>
+                                                        <%= link_to image_tag(item.image_upload), item_path(item.id), alt: 'image_upload' %>
                                                       <%else%>
-                                                        <%= image_tag(item.image_url) %>
+                                                        <%= link_to image_tag(item.image_url), item_path(item.id) %>
                                                       <%end%>
+
+	                                              
 	                                                </div>
 
 	                                                <div class="product-actions--a product-actions--2" data-animation-in="slideInRight"  data-animation-out="slideOutRight">
@@ -136,15 +50,9 @@
 	                                                </div>
 	                                            </div>
 
-	                                            <div class="block-body px-0">
-	                                                <h3 class="heading heading-6 strong-500 text-capitalize mb-0"><%= item.id %> - "<%= item.title %>"</h3>
-	                                                <span class="star-rating star-rating-sm">
-	                                                    <i class="fa fa-star"></i>
-	                                                    <i class="fa fa-star"></i>
-	                                                    <i class="fa fa-star"></i>
-	                                                    <i class="fa fa-star-o"></i>
-	                                                    <i class="fa fa-star-o"></i>
-	                                                </span>
+	                                            <div class="block-body px-0 text-center">
+	                                                <h3 class="heading heading-6 strong-500 text-capitalize mb-0">"<%= item.title %>"</h3>
+	                                             
 	                                                <div class="price-wrapper">
 	                                                    <span class="price-value"><%= item.price %><span class="price heading-6 c-gray-light strong-400"> €</span></span>
 	                                                </div>
