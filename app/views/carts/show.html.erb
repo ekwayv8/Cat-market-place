@@ -1,2 +1,52 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<div class= "cart-wrapper">
+    <h2 class="headline">Shopping Cart</h2>
+
+    <table class= "cart-table">
+        <tr class="table-categories">
+            <th></th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Edit quantity</th>
+            <th></th>
+        </tr>
+        <% current_user.cart.cart_items.each do |cart_item| %>
+        <tr>
+            <td class="">
+              <% if cart_item.item.picture.attached? %>
+                   <%= image_tag cart_item.item.picture.variant(resize: "100x100") %>
+                 <% else %>
+               <img src="<%= cart_item.item.image_url %>" alt="" style='width:100px'>
+                <% end %>
+            </td>
+            <td class=""><%= cart_item.item.title %></td>
+            <td class="">$ <%= cart_item.item.price %></td>
+            <td class=""><%= cart_item.quantity %> </td>
+            <td class="">
+                <%= form_with(url: cart_item_path(cart_item), method: :patch) do |form| %>
+                <%= form.text_field :quantity, placeholder: "#{cart_item.quantity}", class: "edit-qty"%>
+                <%= form.submit %>
+                <% end %>
+            </td>
+            <td class="">
+                <%= button_to "Remove", cart_item_path(cart_item), :method=>:delete, :remote => true %>
+            </td>
+
+        </tr>
+        <% end %>
+    </table>
+
+    <div class="summary-card">
+        <h5>Cart Total</h5>
+        <hr>
+        <ul>
+            <li><strong>Subtotal:</strong> $ <%= current_user.cart.total_price %></li>
+            <li><strong>Delivery:</strong> Free</li>
+            <hr>
+            <li><strong>Total:</strong> $ <%= current_user.cart.total_price %></li>
+        </ul>
+        <hr>
+
+        <%=link_to "Go to checkout", new_charge_path, class:"checkout-button"%>
+    </div>
+</div>
