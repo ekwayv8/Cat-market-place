@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :carts
   resources :items
+  post 'items/new', to: 'image_uploads#create'
   resources :orders
 
 

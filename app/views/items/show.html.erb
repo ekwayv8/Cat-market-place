@@ -14,7 +14,12 @@
                                         <div class="swiper-container" data-swiper-items="1" data-swiper-space-between="0">
                                             <div class="swiper-wrapper pb-5">
                                                 <div class="swiper-slide">
-                                                    <%= image_tag(@item.image_url) %>
+                                                    <%if @item.image_upload.attached?%>
+                                                        <%= image_tag @item.image_upload, alt: 'image_upload' %>
+                                                      <%else%>
+                                                        <%= image_tag(@item.image_url) %>
+                                                      <%end%>
+                                                    
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <%= image_tag 'cat-category/cat-birman.png', class: "img-fluid"%>
@@ -68,19 +73,7 @@
                                             </div>
                                         </div>
 
-                                        <!-- Rating stars -->
-                                        <div class="rating mt-2">
-                                            <span class="star voted" rel="1"></span>
-                                            <span class="star voted" rel="2"></span>
-                                            <span class="star voted" rel="3"></span>
-                                            <span class="star" rel="4"></span>
-                                            <span class="star" rel="5"></span>
-
-                                            <span class="rating-count">(2 customer reviews)</span>
-                                        </div>
-
-                                        <span class="space-xs-md"></span>
-
+                                       
                                         <!-- Product description -->
                                         <div class="product-short-text">
                                             <p>

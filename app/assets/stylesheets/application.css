@@ -23,7 +23,7 @@
 *= require fancybox/css/jquery.fancybox.min
 
  # Icons
-*= require fonts/font-awesome/css/font-awesome.min
+*= require font-awesome
 *= require fonts/ionicons/css/ionicons.min
 *= require fonts/line-icons/line-icons
 *= require fonts/line-icons-pro/line-icons-pro

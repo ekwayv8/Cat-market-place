@@ -8,7 +8,9 @@
 			</div>
 			<% end %>-->
 
-			<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+
+			<%= form_tag items_new_path, multipart: true do %>
 
 				<div class='form-group'>
 				<%= label_tag 'Enter a title:' %>
@@ -35,7 +37,7 @@
 
 			<div class='form-group'>
 				<%= label_tag 'Upload an image:' %>
-				<%= file_field_tag 'image_url', class:'form-control-file' %>
+				<%= file_field_tag :image_upload, class:'form-control-file' %>
 			</div>
 
 

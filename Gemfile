@@ -81,5 +81,7 @@ gem 'activerecord-reset-pk-sequence'
 gem 'devise'
 
 gem 'mailjet'
+gem 'font-awesome-rails'
+
 
 gem 'stripe'
