@@ -13,4 +13,18 @@ default from: 'no-reply@cat-marketplace-prod.herokuapp.com'
     mail(to: @user.email, subject: 'Cat Lovers! Bienvenue dans le futur! Enjoy') 
   end
 
+    def new_order_email(order)
+	    @user = order.user 
+	    mail(to: @user.email, subject: "Super! Tu viens de commander la plus belle photo de chat du monde!ENJOY !") 
+	end
+
+	def new_order_email_admin(order)
+	    @user = order.user 
+	    @admin = User.where(is_admin: "true")
+
+	    @admin.each do |admin|
+	    mail(to: admin.email, subject: "WakeUp! Tu viens de recevoir une commande sur la boutique du futur !")
+		end
+	end
+
 end
