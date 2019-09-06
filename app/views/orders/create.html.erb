@@ -1,2 +1,8 @@
-<h1>Orders#create</h1>
-<p>Find me in app/views/orders/create.html.erb</p>
+<div class="charge_wrapper">
+  <h2>Merci !</h2><br>
+
+     Vous avez payé, <strong>$<%=current_user.cart.total_price%></strong><br><br>
+
+    <%=button_to "VOS COMMANDES", edit_user_registration_path, method: :get, class:"charge-button" %>
+
+</div>
