@@ -1,8 +1,11 @@
 class CartsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
   end
 
   def show
+     @cart = current_user.cart
   end
 
   def create
