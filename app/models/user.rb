@@ -13,6 +13,14 @@ class User < ApplicationRecord
   #One user can place many orders
   has_many :orders
 
+  after_create :create_cart
+
+  def create_cart
+    cart = Cart.new
+    cart.user = self
+    cart.save
+  end
+  
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
   end
